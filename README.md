@@ -152,27 +152,6 @@ The layer arrangement was chosen to support:
 - cleaner routing of Ethernet and digital interfaces,
 - easier separation of analog, digital and power domains.
 
-### Physical Construction
-
-```text
-┌───────────────────────────────────────────────┐
-│ L1 — TOP        Signals + Components   35 µm │
-├───────────────────────────────────────────────┤
-│                Prepreg 2313            100 µm│
-├───────────────────────────────────────────────┤
-│ L2 — INNER      GND Plane              17.5 µm│
-├───────────────────────────────────────────────┤
-│                    CORE               1.265 mm│
-├───────────────────────────────────────────────┤
-│ L3 — INNER      Power + Signals        17.5 µm│
-├───────────────────────────────────────────────┤
-│                Prepreg 2313            100 µm│
-├───────────────────────────────────────────────┤
-│ L4 — BOTTOM     Signals + Components    35 µm│
-└───────────────────────────────────────────────┘
-
-              Total ≈ 1.57 mm
-
 
 ## Hardware Domains
 
