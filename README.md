@@ -255,6 +255,59 @@ The layout strategy separates sensitive analog paths from noisy switching power 
 | Debug | STM32F103 | Onboard programming and debugging |
 | Audio | DAC + microphone interface | Audio input/output processing |
 
+## Ethernet Interface
+
+The Ethernet subsystem is built around the **DP83826 Ethernet PHY** and the RJ45 interface.
+
+Its PCB implementation required particular attention to routing geometry,
+reference-plane continuity and physical placement.
+
+<p align="center">
+  <img src="assets/pcb/fusioncore_ethernet_layout.png" width="800">
+</p>
+
+### Layout Strategy
+
+The PHY was positioned close to the Ethernet connector in order to keep
+the critical Ethernet signal paths short and well controlled.
+
+The main layout objectives were:
+
+- short PHY-to-connector routing,
+- consistent differential-pair geometry,
+- continuous reference-plane support,
+- minimal unnecessary vias,
+- controlled separation from noisy switching circuitry,
+- compact placement of the associated passive network.
+
+### Differential Routing
+
+The Ethernet traces were treated as coupled differential signals rather
+than independent routes.
+
+Particular attention was given to:
+
+- keeping both traces of each pair together,
+- minimizing unnecessary pair-length mismatch,
+- avoiding abrupt routing discontinuities,
+- maintaining a consistent routing environment,
+- preserving an uninterrupted return-current reference.
+
+### Signal Path
+
+```mermaid
+flowchart LR
+
+    MCU["STM32F407"]
+    PHY["DP83826 PHY"]
+    RJ45["RJ45 Interface"]
+    NET["Ethernet Network"]
+
+    MCU --> PHY
+    PHY --> RJ45
+    RJ45 --> NET
+```
+
 
 ---
 
