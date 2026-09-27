@@ -1,0 +1,30 @@
+# =========================================================
+# Altium Designer generated / temporary files
+# =========================================================
+
+History/
+Project Logs for*/
+__Previews/
+
+*.PrjPcbStructure
+*.SchDocPreview
+*.PcbDocPreview
+
+*.LOG
+*.REP
+*.erc
+*.drc
+
+# Temporary / backup files
+*.tmp
+*.bak
+*.old
+~*
+
+# =========================================================
+# Operating system files
+# =========================================================
+
+Thumbs.db
+Desktop.ini
+.DS_Store
