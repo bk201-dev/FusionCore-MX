@@ -324,7 +324,7 @@ flowchart LR
 ### Bottom View
 
 <p align="center">
-  <img src="assets/renders/fusioncore_3d_bottom.png" width="850">
+  <img src="assets/renders/fusioncore_3d_Bottom.png" width="850">
 </p>
 
 ### PCB Layout
