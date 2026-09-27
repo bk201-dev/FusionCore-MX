@@ -119,7 +119,7 @@ The board was not partitioned only by schematic function. Placement was also dri
 - **The MCU** was positioned centrally to maintain practical routing access to the major peripherals.
 - **Continuous return paths** were considered when routing digital and high-speed signals.
 
-### Hardware Domains
+## Hardware Domains
 
 | Domain | Main Components | Role |
 |---|---|---|
