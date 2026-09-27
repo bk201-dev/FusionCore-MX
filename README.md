@@ -40,6 +40,56 @@ The project was developed as a practical exploration of mixed-signal PCB design,
 
 ---
 
+## System Architecture
+
+FusionCore MX is organized around the STM32F407, which acts as the central processing and control unit.  
+The board combines communication, precision sensing, motor control, audio and development interfaces on a single 4-layer PCB.
+
+```mermaid
+flowchart TB
+
+    MCU["STM32F407<br/>Main Controller"]
+
+    ETH["DP83826<br/>Ethernet PHY"]
+    RJ45["RJ45<br/>Ethernet Interface"]
+
+    ADC["ADS122C04<br/>Precision ADC"]
+    LOAD["Load Cell<br/>Analog Sensor"]
+
+    M1["DRV8701E<br/>Motor Driver A"]
+    MOS1["External MOSFET<br/>Power Stage"]
+    MOTOR1["Motor A"]
+
+    M2["DRV8701E<br/>Motor Driver B"]
+    MOS2["External MOSFET<br/>Power Stage"]
+    MOTOR2["Motor B"]
+
+    USB["CH340C<br/>USB ↔ UART"]
+
+    DEBUG["STM32F103<br/>Onboard Debugger"]
+
+    AUDIO["Audio Subsystem<br/>DAC + Microphone"]
+
+    LOAD --> ADC
+    ADC --> MCU
+
+    MCU --> ETH
+    ETH --> RJ45
+
+    MCU --> M1
+    M1 --> MOS1
+    MOS1 --> MOTOR1
+
+    MCU --> M2
+    M2 --> MOS2
+    MOS2 --> MOTOR2
+
+    USB --> MCU
+    DEBUG --> MCU
+
+    MCU --> AUDIO
+```
+
 ## Key Hardware
 
 | Function | Implementation |
