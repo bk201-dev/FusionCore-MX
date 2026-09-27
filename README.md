@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/renders/fusioncore_3d_iso.png" width="900">
+  <img src="assets/renders/fusioncore_banner.png" width="100%">
 </p>
 
 <h1 align="center">FusionCore MX</h1>
