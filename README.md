@@ -217,6 +217,26 @@ domains:
 - continuous ground-reference regions beneath critical signals,
 - controlled routing around sensitive analog inputs.
 
+  ````markdown
+### Design Principle
+
+```mermaid
+flowchart TB
+
+    LOAD["Load Cell"]
+    ADC["ADS122C04<br/>Precision Analog"]
+
+    MOTOR["Motor Supply"]
+    DRIVER["DRV8701E<br/>Switching Power"]
+
+    MCU["STM32F407<br/>Processing Core"]
+
+    LOAD --> ADC
+    MOTOR --> DRIVER
+
+    ADC -->|"Sensitive signal path"| MCU
+    DRIVER -->|"Controlled power interface"| MCU
+
 
 
 ## Hardware Domains
