@@ -108,6 +108,17 @@ The physical layout was organized into functional regions to keep related circui
 | **07** | STM32F103 Debugger | Integrated programming and debugging interface |
 | **08** | Audio Subsystem | DAC and microphone signal interface |
 
+### Placement Philosophy
+
+The board was not partitioned only by schematic function. Placement was also driven by the electrical behavior of each subsystem.
+
+- **Sensitive analog circuitry** was kept away from noisy switching regions.
+- **Motor-driver power loops** were kept compact to minimize high-current loop area.
+- **Ethernet circuitry** was grouped around the PHY and connector to reduce critical route lengths.
+- **Decoupling networks** were positioned close to their respective IC supply pins.
+- **The MCU** was positioned centrally to maintain practical routing access to the major peripherals.
+- **Continuous return paths** were considered when routing digital and high-speed signals.
+
 ### Hardware Domains
 
 | Domain | Main Components | Role |
