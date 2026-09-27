@@ -89,6 +89,17 @@ flowchart TB
 
     MCU --> AUDIO
 ```
+### Hardware Domains
+
+| Domain | Main Components | Role |
+|---|---|---|
+| Processing | STM32F407 | Central control and signal processing |
+| Ethernet | DP83826 + RJ45 | Wired network communication |
+| Precision Sensing | ADS122C04 | High-resolution load-cell acquisition |
+| Motor Control | 2× DRV8701E + external MOSFETs | Dual power motor-control stages |
+| USB | CH340C | USB-to-UART communication |
+| Debug | STM32F103 | Onboard programming and debugging |
+| Audio | DAC + microphone interface | Audio input/output processing |
 
 ## Key Hardware
 
