@@ -89,6 +89,25 @@ flowchart TB
 
     MCU --> AUDIO
 ```
+## Board Tour
+
+The physical layout was organized into functional regions to keep related circuitry close together, reduce critical current-loop areas, and limit interaction between sensitive analog circuitry, high-speed interfaces and switching power stages.
+
+<p align="center">
+  <img src="assets/pcb/fusioncore_board_tour.png" width="900">
+</p>
+
+| # | Subsystem | Function |
+|---:|---|---|
+| **01** | STM32F407 Processing Core | Main control, computation and peripheral management |
+| **02** | DP83826 Ethernet Interface | Ethernet PHY and connection to the RJ45 interface |
+| **03** | ADS122C04 Analog Front End | Precision acquisition for load-cell measurements |
+| **04** | Motor Driver A | DRV8701E and external MOSFET power stage |
+| **05** | Motor Driver B | Second independent motor-control power stage |
+| **06** | CH340C USB-UART | USB serial communication and development interface |
+| **07** | STM32F103 Debugger | Integrated programming and debugging interface |
+| **08** | Audio Subsystem | DAC and microphone signal interface |
+
 ### Hardware Domains
 
 | Domain | Main Components | Role |
