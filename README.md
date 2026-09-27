@@ -152,6 +152,72 @@ The layer arrangement was chosen to support:
 - cleaner routing of Ethernet and digital interfaces,
 - easier separation of analog, digital and power domains.
 
+## Mixed-Signal Layout Strategy
+
+One of the main challenges of FusionCore MX was integrating precision
+analog circuitry, digital processing, high-speed communication and
+switching power electronics on the same PCB.
+
+Rather than treating the board as a uniform routing area, the placement
+was organized around the electrical behavior of each subsystem.
+
+<p align="center">
+  <img src="assets/pcb/fusioncore_signal_domains.png" width="900">
+</p>
+
+### Functional Domains
+
+| Domain | Main Circuits | Primary Concern |
+|---|---|---|
+| **Precision Analog** | ADS122C04, load-cell interface, audio circuitry | Noise coupling and signal integrity |
+| **Digital Processing** | STM32F407 and digital peripherals | Return-current continuity and routing density |
+| **High-Speed Communication** | DP83826 Ethernet PHY + RJ45 | Differential routing and reference-plane continuity |
+| **Power / Switching** | Supply circuitry, DRV8701E stages, MOSFET power paths | High-current loops, switching noise and thermal behavior |
+
+### Physical Partitioning
+
+Sensitive analog circuitry was concentrated away from the main
+motor-control switching regions to reduce direct coupling from high
+dV/dt and high di/dt nodes.
+
+The STM32F407 was positioned near the center of the board to provide
+practical access to the major peripheral blocks while avoiding
+unnecessarily long control and communication routes.
+
+The Ethernet subsystem was kept close to the RJ45 interface, reducing
+the physical distance of critical Ethernet routing.
+
+The motor-control circuitry was grouped into dedicated regions so that
+gate-driver, MOSFET and power-current paths could remain compact.
+
+### Return-Current Management
+
+Signal routing was considered together with its corresponding return
+path rather than as an isolated copper trace.
+
+The dedicated L2 ground plane provides a nearby reference for many
+top-layer signals and helps reduce return-path impedance.
+
+For critical digital and communication signals, routing over continuous
+reference regions was preferred in order to avoid forcing return
+currents around plane discontinuities.
+
+Particular attention was given to limiting the interaction between
+switching-current paths and sensitive analog measurement regions.
+
+### Noise Containment
+
+Several layout decisions were used to reduce coupling between functional
+domains:
+
+- compact switching-current loops around the motor-driver stages,
+- local decoupling close to IC supply pins,
+- physical distance between precision analog and power-switching circuitry,
+- short connections between Ethernet PHY and interface circuitry,
+- continuous ground-reference regions beneath critical signals,
+- controlled routing around sensitive analog inputs.
+
+
 
 ## Hardware Domains
 
