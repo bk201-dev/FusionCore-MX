@@ -333,6 +333,23 @@ flowchart LR
   <img src="assets/pcb/fusioncore_pcb_layout.png" width="850">
 </p>
 
+## Design Validation
+
+Before considering the design complete, the PCB was reviewed from several perspectives:
+
+- schematic connectivity and electrical rule checking,
+- PCB design rule checking,
+- component placement and mechanical clearance,
+- layer stack and routing review,
+- reference plane continuity,
+- differential routing inspection,
+- power distribution review,
+- decoupling placement,
+- analog / digital / power domain interaction,
+- 3D mechanical inspection.
+
+The project was developed primarily as a practical mixed-signal PCB design exercise focused on architecture, layout methodology and hardware design decisions.
+
 ---
 
 > Full technical documentation, PCB renders, architecture diagrams and design files are being added.
