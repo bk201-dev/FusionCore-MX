@@ -101,19 +101,6 @@ flowchart TB
 | Debug | STM32F103 | Onboard programming and debugging |
 | Audio | DAC + microphone interface | Audio input/output processing |
 
-## Key Hardware
-
-| Function | Implementation |
-|---|---|
-| Main MCU | STM32F407 |
-| PCB | 4-Layer |
-| Ethernet | DP83826 PHY + RJ45 |
-| Precision ADC | ADS122C04 |
-| Motor Control | 2× DRV8701E + external N-MOSFET stages |
-| USB-UART | CH340C |
-| Debug Interface | STM32F103 onboard debugger |
-| Analog Acquisition | Load-cell interface |
-| Audio | DAC + microphone interface |
 
 ---
 
