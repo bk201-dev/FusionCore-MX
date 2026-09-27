@@ -119,6 +119,61 @@ The board was not partitioned only by schematic function. Placement was also dri
 - **The MCU** was positioned centrally to maintain practical routing access to the major peripherals.
 - **Continuous return paths** were considered when routing digital and high-speed signals.
 
+## PCB Stackup & Layer Strategy
+
+FusionCore MX was implemented as a 4-layer PCB using the JLC2313 stackup.
+
+<p align="center">
+  <img src="assets/pcb/fusioncore_stackup.png" width="850">
+</p>
+
+### Layer Assignment
+
+| Layer | Primary Role | Copper |
+|---|---|---:|
+| **L1 — Top** | Components + critical signal routing | 35 µm |
+| **L2 — Inner 1** | Continuous ground reference plane | 17.5 µm |
+| **L3 — Inner 2** | Power distribution + secondary routing | 17.5 µm |
+| **L4 — Bottom** | Signal routing + bottom-side components | 35 µm |
+
+The resulting board thickness is approximately **1.57 mm**, corresponding to a standard ~1.6 mm PCB construction.
+### Why a 4-Layer Stackup?
+
+A 4-layer architecture was selected to provide a dedicated low-impedance
+ground reference while keeping the outer layers available for component
+placement and signal routing.
+
+The layer arrangement was chosen to support:
+
+- continuous return-current paths beneath high-speed signals,
+- improved power-distribution integrity,
+- reduced loop areas,
+- lower coupling between noisy power stages and sensitive analog circuitry,
+- cleaner routing of Ethernet and digital interfaces,
+- easier separation of analog, digital and power domains.
+
+### Physical Construction
+
+```text
+┌───────────────────────────────────────────────┐
+│ L1 — TOP        Signals + Components   35 µm │
+├───────────────────────────────────────────────┤
+│                Prepreg 2313            100 µm│
+├───────────────────────────────────────────────┤
+│ L2 — INNER      GND Plane              17.5 µm│
+├───────────────────────────────────────────────┤
+│                    CORE               1.265 mm│
+├───────────────────────────────────────────────┤
+│ L3 — INNER      Power + Signals        17.5 µm│
+├───────────────────────────────────────────────┤
+│                Prepreg 2313            100 µm│
+├───────────────────────────────────────────────┤
+│ L4 — BOTTOM     Signals + Components    35 µm│
+└───────────────────────────────────────────────┘
+
+              Total ≈ 1.57 mm
+
+
 ## Hardware Domains
 
 | Domain | Main Components | Role |
