@@ -307,7 +307,31 @@ flowchart LR
     PHY --> RJ45
     RJ45 --> NET
 ```
+## PCB Gallery
 
+### 3D Overview
+
+<p align="center">
+  <img src="assets/renders/fusioncore_3d_iso.png" width="850">
+</p>
+
+### Top View
+
+<p align="center">
+  <img src="assets/renders/fusioncore_3d_top.png" width="850">
+</p>
+
+### Bottom View
+
+<p align="center">
+  <img src="assets/renders/fusioncore_3d_bottom.png" width="850">
+</p>
+
+### PCB Layout
+
+<p align="center">
+  <img src="assets/pcb/fusioncore_pcb_layout.png" width="850">
+</p>
 
 ---
 
