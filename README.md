@@ -137,7 +137,7 @@ FusionCore MX was implemented as a 4-layer PCB using the JLC2313 stackup.
 | **L4 — Bottom** | Signal routing + bottom-side components | 35 µm |
 
 The resulting board thickness is approximately **1.57 mm**, corresponding to a standard ~1.6 mm PCB construction.
-### Why a 4-Layer Stackup?
+### Why a 4-Layer Stackup ?
 
 A 4-layer architecture was selected to provide a dedicated low-impedance
 ground reference while keeping the outer layers available for component
@@ -352,4 +352,4 @@ The project was developed primarily as a practical mixed-signal PCB design exerc
 
 ---
 
-> Full technical documentation, PCB renders, architecture diagrams and design files are being added.
+> Full technical documentation, PCB renders, architecture diagrams and design files are available.
